@@ -1,0 +1,17 @@
+<h1>My selected restaurant</h1>
+
+
+<h1><%= @restaurant.name %></h1>
+<p>Category: <%= @restaurant.category %></p>
+<p>Address: <%= @restaurant.address %></p>
+<p>Phone: <%= @restaurant.phone_number %></p>
+<br>
+<ul class="list-inline">
+  <% @restaurant.reviews.each do |review| %>
+    <li>Rating: <%= review.rating %> </li>
+    <li>Comment: <%= review.content %> </li>
+    <br>
+  <% end %>
+</ul>
+<br>
+<%= link_to "Back to list", restaurants_path %>
